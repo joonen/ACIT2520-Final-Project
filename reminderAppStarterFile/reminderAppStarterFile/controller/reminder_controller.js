@@ -36,27 +36,27 @@ let remindersController = {
     let reminderToFind = req.params.id;
     let searchResult = database.cindy.reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
-    });
-    res.render("reminder/edit", { reminderItem: searchResult });
+  });
+  res.render("reminder/edit", { reminderItem: searchResult });
   },
 
   update: (req, res) => {
-    // Implement this code
+  // Implement this code
 
   },
 
   delete: (req, res) => {
   // Implement this code
   let reminderToFind = req.params.id;
-    let searchResult = database.cindy.reminders.find(function (reminder) {
-      return reminder.id == reminderToFind;
+  let searchResult = database.cindy.reminders.find(function (reminder) {
+    return reminder.id == reminderToFind;
     });
     if (searchResult != undefined) {
-      res.render("reminder/single-reminder", { reminderItem: searchResult });
-    } else {
-      res.render("reminder/index", { reminders: database.cindy.reminders.delete() });
+      res.render("reminder/index", { reminders: database.cindy.reminders.splice() }); // Splice!
       res.redirect("/reminders");
-    }
+    } else {
+      res.render("reminder/index", { reminders: database.cindy.reminders });   // I honestly don't know why this is here.
+     }
   },
 };
 
