@@ -32,24 +32,24 @@ app.post("/reminder/update/:id", reminderController.update);
 app.post("/reminder/delete/:id", reminderController.delete);
 
 // Fix this to work with passport! The registration does not need to work, you can use the fake database for this.
-// app.get("/register", authController.register);
-// app.get("/login", authController.login);
-// app.post("/register", authController.registerSubmit);
-// app.post("/login", authController.loginSubmit);
+app.get("/register", authController.register);
+app.get("/login", authController.login);
+app.post("/register", authController.registerSubmit);
+app.post("/login", authController.loginSubmit);
 
-const passport = require("./middleware/passport");
-const authRoute = require("./routes/authRoute");
-const indexRoute = require("./routes/indexRoute");
+// const passport = require("./middleware/passport");
+// const authRoute = require("./routes/authRoute");
+// const indexRoute = require("./routes/indexRoute");
 
-// Middleware for express
-app.use(express.json());
-app.use(expressLayouts);
-app.use(express.urlencoded({ extended: true }));
-app.use(passport.initialize());
-app.use(passport.session()); // Indicates desire to use sessions.
+// // Middleware for express
+// app.use(express.json());
+// app.use(expressLayouts);
+// app.use(express.urlencoded({ extended: true }));
+// app.use(passport.initialize());
+// app.use(passport.session()); // Indicates desire to use sessions.
 
-app.use("/", indexRoute);
-app.use("/auth", authRoute);
+// app.use("/", indexRoute);
+// app.use("/auth", authRoute);
 
 app.listen(3001, function () {
   console.log(
