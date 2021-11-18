@@ -3,14 +3,14 @@ let Database = {
         id: 1,
         name: "Cindy",
         email:"cindy@gmail.com",
-        password:"cindypass",
+        password:"cindyPass",
         reminders: [{id: 1, title: "abc", description: "abcabc", completed: false}]
     },
     alex: {
         id: 2,
         name: "Alex",
         email: "alex@gmail.com",
-        password: "alexpass",
+        password: "alexPass",
         reminders: []
     } 
 }
