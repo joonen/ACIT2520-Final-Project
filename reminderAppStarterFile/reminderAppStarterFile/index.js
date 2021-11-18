@@ -37,6 +37,20 @@ app.get("/login", authController.login);
 app.post("/register", authController.registerSubmit);
 app.post("/login", authController.loginSubmit);
 
+// const passport = require("./middleware/passport");
+// const authRoute = require("./routes/authRoute");
+// const indexRoute = require("./routes/indexRoute");
+
+// // Middleware for express
+// app.use(express.json());
+// app.use(expressLayouts);
+// app.use(express.urlencoded({ extended: true }));
+// app.use(passport.initialize());
+// app.use(passport.session()); // Indicates desire to use sessions.
+
+// app.use("/", indexRoute);
+// app.use("/auth", authRoute);
+
 app.listen(3001, function () {
   console.log(
     "Server running. Visit: localhost:3001/reminders in your browser 🚀"
