@@ -18,4 +18,8 @@ let authController = {
   },
 };
 
+function isUserValid(user, password) {
+  return user.password === password;
+}
+
 module.exports = authController;
