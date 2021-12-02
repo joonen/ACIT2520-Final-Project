@@ -14,10 +14,6 @@ router.post(
   passport.authenticate("local", {
     successRedirect: "/reminders",
     failureRedirect: "/auth/login",
-  }),
-  passport.authenticate("github", {
-    successRedirect: "/reminders",
-    failureRedirect: "/auth/login",
   })
 );
 
