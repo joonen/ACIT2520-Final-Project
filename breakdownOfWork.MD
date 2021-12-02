@@ -22,3 +22,11 @@ Arjun Boury:
 Week: 22 November 2021 - 29 November 2021
 +
 Week: 29 November 2021 - 6 November 2021
+
+Kashya Kaczkowska: 
+ 1. Generating random profile picture - This task is responsible in generating a random photo for a user when they sign up using UnsplashAPI.
+ 2. Change profile picture - This task is responsible in allowing the user to change their profile picture once logged in using multer and imgurAPI.
+
+ Arjun Boury:
+
+
