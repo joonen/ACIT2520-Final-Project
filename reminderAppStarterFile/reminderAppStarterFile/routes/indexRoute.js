@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 //-------------DASHBOARD ROUTE-------------//
 router.get("/reminders", ensureAuthenticated, (req, res) => {
   res.post("/reminders", {
-    user: req.user,
+    user: req.user.name,
   });
 });
 

@@ -1,4 +1,5 @@
-let database = require("../database").userModel;
+let database = require("../database").Database;
+let userModel = require("../database").userModel;
 
 let authController = {
   login: (req, res) => {
