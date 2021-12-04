@@ -92,6 +92,11 @@ app.get("/templogin", ensureAuthenticated, (req, res) => {
   res.render("../templogin/templogin", { user: req.user });
 });
 
+app.get("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/");
+});
+
 app.use("/", indexRoute);
 app.use("/auth", authRoute);
 
