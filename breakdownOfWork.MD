@@ -33,6 +33,7 @@ Kashya Kaczkowska:
 5. Authenticated users cannot see other authenticated users reminders. Only their own. -  This task was so that user can only see their sessions and can only see their reminders.
 6. Authenticated users cannot change other authenticated users reminders. Only their own.  This task was so that user can only see their sessions and can only change their reminders and not other uses reminders.
 7. Authenticated users cannot delete other authenticated users reminders. Only their own.  This task was so that user can only see their sessions and can only delete their own reminders and not other users reminders.
+8. Added Logout
 
  Arjun Boury:
 
