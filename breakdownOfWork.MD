@@ -30,9 +30,9 @@ Kashya Kaczkowska:
 2. Fixed delete for reminders - Task was to complete and fix deleting the reminders so the user can delete their reminders.
 3. Completed passport authentication -  This task was so that user can only see their sessions.
 4. Semi-implemented GitHub Auth(Doesn't work yet). - This task was to allow the user to login to the reminders app using github login.
-5. Authenticated users cannot see other authenticated users reminders. Only their own. -  This task was so that user can only see their sessions and can only see their reminders.
-6. Authenticated users cannot change other authenticated users reminders. Only their own.  This task was so that user can only see their sessions and can only change their reminders and not other uses reminders.
-7. Authenticated users cannot delete other authenticated users reminders. Only their own.  This task was so that user can only see their sessions and can only delete their own reminders and not other users reminders.
+5. Completed authenticated users cannot see other authenticated users reminders. Only their own. -  This task was so that user can only see their sessions and can only see their reminders.
+6. completed authenticated users cannot change other authenticated users reminders. Only their own.  This task was so that user can only see their sessions and can only change their reminders and not other uses reminders.
+7. completed authenticated users cannot delete other authenticated users reminders. Only their own.  This task was so that user can only see their sessions and can only delete their own reminders and not other users reminders.
 8. Added Logout
 
  Arjun Boury:
