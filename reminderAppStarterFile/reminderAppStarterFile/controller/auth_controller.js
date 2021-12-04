@@ -11,7 +11,7 @@ let authController = {
   },
 
   loginSubmit: (req, res) => {
-    res.render("auth/reminders");
+    res.redirect("/templogin");
   },
 
   registerSubmit: (req, res) => {

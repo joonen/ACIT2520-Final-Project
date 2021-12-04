@@ -1,19 +1,19 @@
-let Database = {
-    cindy: {
+let Database = [
+    {
         id: 1,
         name: "Cindy",
         email:"cindy@gmail.com",
-        password:"cindyPass",
+        password:"c",
         reminders: [{id: 1, title: "abc", description: "abcabc", completed: false}]
     },
-    alex: {
+    {
         id: 2,
         name: "Alex",
         email: "alex@gmail.com",
         password: "alexPass",
         reminders: []
     } 
-}
+  ]
 
 const userModel = {
     findOne: (email) => {

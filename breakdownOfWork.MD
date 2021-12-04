@@ -18,15 +18,21 @@ Kashya Kaczkowska:
 
 
 Arjun Boury:
+1. Authentication Milestone(semi-completed)
+
 
 Week: 22 November 2021 - 29 November 2021
 +
 Week: 29 November 2021 - 6 November 2021
 
 Kashya Kaczkowska: 
- 1. Generating random profile picture - This task is responsible in generating a random photo for a user when they sign up using UnsplashAPI.
- 2. Change profile picture - This task is responsible in allowing the user to change their profile picture once logged in using multer and imgurAPI.
+1. Fixed edit for reminders - Task was to complete and fix editing the reminders so the user can edit their reminders.
+2. Fixed delete for reminders - Task was to complete and fix deleting the reminders so the user can delete their reminders.
+3. Completed passport authentication -  This task was so that user can only see their sessions.
+4. Semi-implemented GitHub Auth(Doesn't work yet). - This task was to allow the user to login to the reminders app using github login.
+5. Authenticated users cannot see other authenticated users reminders. Only their own. -  This task was so that user can only see their sessions and can only see their reminders.
+6. Authenticated users cannot change other authenticated users reminders. Only their own.  This task was so that user can only see their sessions and can only change their reminders and not other uses reminders.
+7. Authenticated users cannot delete other authenticated users reminders. Only their own.  This task was so that user can only see their sessions and can only delete their own reminders and not other users reminders.
 
  Arjun Boury:
-
 
