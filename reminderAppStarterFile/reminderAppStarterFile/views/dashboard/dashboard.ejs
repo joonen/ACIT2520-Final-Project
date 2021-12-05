@@ -1,0 +1,22 @@
+<h1>Dashboard</h1>
+
+<h2>Welcome <%= user.name %></h2>
+
+<h2>Current Active Sessions:</h2>
+<br>
+<!-- sessions format [ [sessionid, "session data"],[sessionid, "session data"],[sessionid, "session data"] ] -->
+<% for (let session in sessions) { %>
+    <% if (sessions[session][0] != "undefined") { %>
+    <form action="/admin" method="POST">
+        <% let sid = sessions[session][0] %>
+        <input type="hidden" id="sid" name="sid" value="<%= sid %>">
+        <h3>Session ID: <%= sid %>
+            <!-- name = "sid" -->
+        <% let obj = JSON.parse(sessions[session][1]); %>
+            <br>
+        UserID: <%= obj.passport.user %></h3>
+        <br>
+        <button type="submit" class="btn btn-primary">Revoke Session</button>
+    </form>
+    <% } %>
+<% } %>

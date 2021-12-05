@@ -19,6 +19,18 @@ let authController = {
   },
 };
 
+const getUserByGithubIdOrCreate = (userid, username, useremail) => {
+  user = {
+    id: userid,
+    name: username,
+    email: useremail,
+    role: "user",
+    reminders: []
+  }
+  database.push(user);
+  return user;
+}
+
 const getUserByEmailIdAndPassword = (email, password) => {
   let user = userModel.findOne(email);
   if (user) {
@@ -43,5 +55,6 @@ function isUserValid(user, password) {
 module.exports = {
   getUserByEmailIdAndPassword,
   getUserById,
-  authController
+  authController,
+  getUserByGithubIdOrCreate,
 };

@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const sessionStore = require('sessionstore');
 const ejsLayouts = require("express-ejs-layouts");
 // const bodyParser = require('body-parser');
 const reminderController = require("./controller/reminder_controller");
@@ -16,6 +17,7 @@ app.use(
     secret: "secret",
     resave: false,
     saveUninitialized: false,
+    store: sessionStore.createSessionStore(),
     cookie: {
       httpOnly: true,
       secure: false,
@@ -27,10 +29,6 @@ app.use(
 // Middleware for express
 app.use(passport.initialize());
 app.use(passport.session()); // Indicates desire to use sessions.
-
-// app.use(express.json());
-// // app.use(expressLayouts);
-// app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -70,7 +68,6 @@ app.post("/register", authController.registerSubmit);
 // app.post("/login", authController.loginSubmit);
 
 app.post("/login", passport.authenticate("local", {
-  // req.body
   successRedirect: "/templogin",
   failureRedirect: "/login",
 }));
@@ -81,15 +78,34 @@ app.get('/auth/github',
 app.get('/auth/github/callback', 
   passport.authenticate('github', { failureRedirect: '/login' }),
   function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
+    res.redirect('/templogin');
   });
-
-// make another post request from github
-// app.post("/githublogin");
 
 app.get("/templogin", ensureAuthenticated, (req, res) => {
   res.render("../templogin/templogin", { user: req.user });
+});
+
+app.get("/admin", ensureAuthenticated, (req, res) => {
+  let userSessions =  Object.entries(req.sessionStore.sessions);
+  if (req.user.role == "admin") {
+    res.render("dashboard/dashboard", {
+      user: req.user,
+      sessions: userSessions,
+    });
+  } else {
+    res.redirect("/reminders");
+  }
+});
+
+app.post("/admin", ensureAuthenticated, (req, res) => {
+  let sid = req.body.sid;
+  delete req.sessionStore.sessions[sid];
+  // delete object[name]
+  // delete object.name
+  // object {
+  //  name: "", 
+  // }
+  res.redirect("/admin");
 });
 
 app.get("/logout", (req, res) => {

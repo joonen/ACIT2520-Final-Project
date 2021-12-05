@@ -2,6 +2,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const userController = require("../controller/auth_controller");
 const GitHubStrategy = require('passport-github').Strategy;
+require("dotenv").config()
 
 const localLogin = new LocalStrategy(
   {
@@ -19,25 +20,19 @@ const localLogin = new LocalStrategy(
   }
 );
 
-const githubStrategy = new GitHubStrategy(
-  {
-  clientID: '3a52d3a11592093f2f3f',
-  clientSecret: '76ef0b545f7220f9bd76213d5a03c2d888c1cca8T',
+const githubStrategy = new GitHubStrategy({
+  clientID: process.env.GITHUB_CLIENT_ID,
+  clientSecret: process.env.GITHUB_CLIENT_SECRET,
   callbackURL: "http://localhost:3001/auth/github/callback"
-  },
-
-  async (accessToken, refreshToken, profile, done) => {
-    const userImage = profile.photos[0].value
-    try {
-      const user = await userController.findOrCreateGithubUser(profile.id, profile.username, profile.email, userImage);
-      return done(null, user);
-    } catch (err) {
-      throw err;
-    }
-  }
-)
-
-passport.use(localLogin).use(githubStrategy);
+},
+function(accessToken, refreshToken, profile, done) {
+  try {
+    let user = userController.getUserByGithubIdOrCreate(profile.id, profile.username, profile.email) 
+    return done(null, user);
+  } catch (err) {
+    throw err;
+  }},
+);
 
 passport.use(localLogin).use(githubStrategy);
 
