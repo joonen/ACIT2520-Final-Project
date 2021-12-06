@@ -38,6 +38,6 @@ Kashya Kaczkowska:
 10. Unsplash API - This task is responsible for uploading random picture from unsplash api to user's profile.
 
 Arjun Boury:
-2. Upload profile pic - This task is reponsible for allowing user to change their profile picture.
-3. Prisma - This task responsible for Converting all code that communicates with the Fake Database to use Prisma with an SQLite database instead. 
+1. Upload profile pic - This task is reponsible for allowing user to change their profile picture.
+2. Prisma - This task responsible for Converting all code that communicates with the Fake Database to use Prisma with an SQLite database instead. 
 
