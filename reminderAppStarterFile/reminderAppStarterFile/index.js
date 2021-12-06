@@ -26,6 +26,7 @@ app.use(
   })
 );
 
+
 // Middleware for express
 app.use(passport.initialize());
 app.use(passport.session()); // Indicates desire to use sessions.

@@ -1,2 +1,20 @@
 <p>Welcome <%= user.name %> </p>
 
+<img alt="" id="unsplashImage" width="100" height="100"/>
+
+<script>
+    const endpoint = `https://api.unsplash.com/photos/random/?client_id=4nv7-NpHF3DLaauvXnRXKBIpG9F0gYTV7-jtJKMtPPY`;
+
+    let imageElement = document.querySelector("#unsplashImage");
+
+    fetch(endpoint)
+    .then(function (response){
+        return response.json();
+    })
+    .then(function (jsonData) {
+        imageElement.src = jsonData.urls.regular;
+    
+    })
+
+</script>
+
