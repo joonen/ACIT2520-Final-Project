@@ -37,4 +37,6 @@ Kashya Kaczkowska:
 9. Completed Admin destroy - This task allows admin users to destroy a session.
 
  Arjun Boury:
+ 1: Unsplash API - This task is responsible for uploading random picture from unsplash api to user's profile.
+ 2. Upload profile pic - This task is reponsible for allowing user to change their profile picture.
 
