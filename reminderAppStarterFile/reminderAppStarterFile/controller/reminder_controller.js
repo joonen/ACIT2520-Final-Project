@@ -3,6 +3,14 @@ let database = require("../database");
 // let request = require('request');
 
 let remindersController = {
+  /* 
+  const key = ZW7jBQe3e0C9QtfN4GN2GTTssSt7BbNkabnxbMhd9Pc
+
+    fetch.(`https:api/unsplash.com/search/photos?client_id=${key}`)
+      .then((res)=> res.json())
+      .then((json)=> console.log(json));
+  
+  */
   list: (req, res) => {
     res.render("reminder/index", { reminders: req.user.reminders });
   },
