@@ -35,9 +35,9 @@ Kashya Kaczkowska:
 7. Completed authenticated users cannot delete other authenticated users reminders. Only their own.  This task was so that user can only see their sessions and can only delete their own reminders and not other users reminders.
 8. Added Logout - This task was to ensure that the user can log out of their session.
 9. Completed Admin destroy - This task allows admin users to destroy a session.
+10. Unsplash API - This task is responsible for uploading random picture from unsplash api to user's profile.
 
 Arjun Boury:
-1. Unsplash API - This task is responsible for uploading random picture from unsplash api to user's profile.
 2. Upload profile pic - This task is reponsible for allowing user to change their profile picture.
 3. Prisma - This task responsible for Converting all code that communicates with the Fake Database to use Prisma with an SQLite database instead. 
 
