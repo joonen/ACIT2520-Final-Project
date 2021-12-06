@@ -36,7 +36,7 @@ Kashya Kaczkowska:
 8. Added Logout - This task was to ensure that the user can log out of their session.
 9. Completed Admin destroy - This task allows admin users to destroy a session.
 
- Arjun Boury:
+Arjun Boury:
 1: Unsplash API - This task is responsible for uploading random picture from unsplash api to user's profile.
 2. Upload profile pic - This task is reponsible for allowing user to change their profile picture.
 3. Prisma - This task responsible for Converting all code that communicates with the Fake Database to use Prisma with an SQLite database instead. 
